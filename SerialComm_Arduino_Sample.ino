@@ -10,9 +10,10 @@ void loop(void)
     unsigned long second;
     String message;
 
+    message = "It's passed ";
     second = millis() / 1000;
-    message = String("起動から" + second);
-    message += "秒経過";
-    Serial.println(message);
+    message.concat(second);
+    message.concat(" second.");
+    Serial.println(message.c_str());
     delay(1000);
 }
